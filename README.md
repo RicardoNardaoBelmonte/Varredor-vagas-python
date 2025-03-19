@@ -29,3 +29,15 @@ scrapy crawl "nome da spider" -O arquivo.csv
 Neste caso o nome da Spider seria vagaspython
 
 O tipo de arquivo pode ser de sua preferência como .csv ou .json etc...
+
+## OBS:
+
+Lembrar sempre de estar na pasta certa e dentro do ambiente virtual scrapy para rodar a aplicação
+
+Exemplo
+
+```bash
+cd 'C:\Users\Usuario\Desktop\Projetos Github\varredor-de-vagas-python\Varredor-vagas-python\projeto-scrapy\varredor_de_sites'
+
+.\scrapy\Scripts\activate
+```
