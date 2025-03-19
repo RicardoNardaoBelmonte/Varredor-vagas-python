@@ -67,7 +67,7 @@ class ProductScraperSpider(scrapy.Spider):
     def parse_extracao(self, driver, wait):
         response_webdriver = Selector(text=driver.page_source)
 
-        for vaga in response_webdriver.xpath('//li[@class="vaga odd "]'):
+        for vaga in response_webdriver.xpath('//li[@class="vaga odd " or @class="vaga even "]'):
             link_vaga = vaga.xpath('.//a[@class="link-detalhes-vaga"]/@href').get()
             if link_vaga is not None and link_vaga not in self.links_coletados_das_vagas:
                 self.links_coletados_das_vagas.add(link_vaga)
@@ -85,9 +85,7 @@ class ProductScraperSpider(scrapy.Spider):
             if botao_mostrar_vagas is not None:
                 botao_mostrar_vagas.click()
                 print('Botao Clicado')
-                sleep(5)
-                driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-                sleep(5)
+                sleep(10)
                 yield from self.parse_extracao(driver, wait)
         except Exception as error:
                 print(error)

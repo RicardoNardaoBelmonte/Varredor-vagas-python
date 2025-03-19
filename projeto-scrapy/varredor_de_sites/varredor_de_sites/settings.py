@@ -47,7 +47,7 @@ USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTM
 
 
 ###configuracao proxy
-SCRAPEOPS_API_KEY = '89a059b9-cd56-4783-8ae4-cc4bbbbff174'
+SCRAPEOPS_API_KEY = ''
 SCRAPEOPS_PROXY_ENABLED = True
 DOWNLOADER_MIDDLEWARES = {
     'scrapeops_scrapy_proxy_sdk.scrapeops_scrapy_proxy_sdk.ScrapeOpsScrapyProxySdk': 725,
