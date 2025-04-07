@@ -13,5 +13,24 @@ class VarredorDeSitesPipeline:
         return item'''
 
 
-import sqlite3
+from itemadapter import ItemAdapter
+import openpyxl
+import openpyxl.workbook
+from varredor_de_sites.settings import XLSX_PATH
+campos = ['cargo', 'nome_empresa', 'local', 'link_vaga']
+
+class VarredorXLSX(object):
+    planilha = None
+    sheet = None
+
+    def open_spider(self, spider):
+        self.planilha = openpyxl.Workbook()
+        self.sheet = self.planilha.active
+        self.sheet.append(campos)
+    def process_item(self, item, spider):
+        adapter = ItemAdapter(item)
+        self.sheet.append([adapter.get(campo) for campo in campos])
+        return item
+    def close_spider(self, spider):
+        self.planilha.save(XLSX_PATH)
 
