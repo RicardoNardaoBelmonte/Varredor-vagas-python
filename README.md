@@ -41,3 +41,21 @@ cd 'C:\Users\Usuario\Desktop\Projetos Github\varredor-de-vagas-python\Varredor-v
 
 .\scrapy\Scripts\activate
 ```
+
+## Exportação de Dados com Pipeline para Excel
+
+Este projeto utiliza uma pipeline personalizada para exportar automaticamente os dados coletados pela spider para uma planilha no formato .xlsx, facilitando a visualização e análise dos resultados em softwares como Excel ou Google Sheets.
+
+## Tecnologias utilizadas
+
+- openpyxl: biblioteca responsável pela criação e manipulação da planilha Excel.
+
+- itemadapter: permite acessar os campos do item de forma padronizada, independentemente do tipo de objeto retornado pela spider (por exemplo, dict ou Item do Scrapy).
+
+## Vantagens
+
+Não é necessário utilizar a opção -O arquivo.csv na execução da spider, pois os dados são salvos automaticamente em uma planilha .xlsx.
+
+## Configuração
+
+O caminho do arquivo Excel é definido em settings.py através da constante XLSX_PATH, permitindo manter um local padrão para a saída da planilha. A pipeline também é registrada no settings.py, centralizando a configuração e evitando a necessidade de alteração na spider.
