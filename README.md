@@ -26,7 +26,7 @@ Para iniciar o projeto, execute o comando abaixo para rodar a spider que fará o
 ```bash
 scrapy crawl "nome da spider" -O arquivo.csv
 ```
-Neste caso o nome da Spider seria vagaspython
+Neste caso o nome da Spider seria desafio_vagaspython
 
 O tipo de arquivo pode ser de sua preferência como .csv ou .json etc...
 
